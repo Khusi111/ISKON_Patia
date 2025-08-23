@@ -172,22 +172,8 @@ export function Header() {
 
   return (
     <>
-      {/* Announcement Bar with login/profile icon */}
-      <div className="bg-primary text-white py-1 sm:py-2 px-2 sm:px-4 relative flex justify-center items-center">
-        <p className="text-xs sm:text-sm md:text-lg text-center">
-          New Iskcon Temple going to be inaugurated on June...
-        </p>
-        <div className="absolute right-3">
-          {isLoggedIn ? (
-            <Link href="/loginadmin" title="View Dashboard">
-              <UserCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white hover:text-amber-200 cursor-pointer" />
-            </Link>
-          ) : (
-            <Link href="/loginadmin" title="Login">
-              <LogIn className="w-6 h-6 sm:w-8 sm:h-8 text-white hover:text-amber-200 cursor-pointer" />
-            </Link>
-          )}
-        </div>
+
+
 
 
 
@@ -298,8 +284,6 @@ export function Header() {
 
 
 
-      </div>
-
       {/* Main Header */}
       <header className="bg-white relative z-20">
         <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-3">
@@ -336,6 +320,16 @@ export function Header() {
               >
                 Donate Now
               </Link>
+
+              {isLoggedIn ? (
+                <Link href="/loginadmin" title="View Dashboard">
+                  <UserCircle className="w-6 h-6 sm:w-8 sm:h-8 text-primary hover:text-primary/80 cursor-pointer" />
+                </Link>
+              ) : (
+                <Link href="/loginadmin" title="Login">
+                  <LogIn className="w-6 h-6 sm:w-8 sm:h-8 text-primary hover:text-primary/80 cursor-pointer" />
+                </Link>
+              )}
 
               <div className="md:hidden">
                 <button className="text-primary" onClick={toggleMobileMenu}>
